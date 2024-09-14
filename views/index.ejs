@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+  <h1>Currency Converter</h1>
+  <form action="/submit-currency" method="post">
+    <label for="Currency1">From (Currency Name or Code or Country Name):</label>
+    <br>
+    <input type="text" id="Currency1" name="Currency1" required>
+    <br>
+    
+    <label for="Amount">Amount:</label>
+    <br>
+    <input type="number" id="Amount" name="Amount" step="any" required>
+    <br>
+    
+    <label for="Currency2">To (Currency Name or Code or Country Name):</label>
+    <br>
+    <input type="text" id="Currency2" name="Currency2" required>
+    <br>
+    
+    <button type="submit">Convert</button>
+  </form>
+
+  <% if (data) { %>
+    <% if (data.error) { %>
+      <p class="error"><%= data.error %></p>
+    <% } else { %>
+      <div class="result-container">
+        <p class="conversion-amount"><%= data.Amount %> <%= data.FromCurrency %> is equal to <%= data.ConversionResult %> <%= data.ToCurrency %></p>
+        <p class="conversion-rate">Conversion Rate: 1 <%= data.FromCurrency %> = <%= data.ConversionRate %> <%= data.ToCurrency %></p>
+      </div>
+    <% } %>
+  <% } %>
+  <%- include("partials/footer.ejs") %>  
+  
+</body>
+</html>

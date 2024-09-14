@@ -1,0 +1,13 @@
+footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: #FFFFFF; /* White text color for contrast */
+    background-color: #7D3C98; /* Purple background for footer */
+    border-top: 1px solid #7D3C98; /* Purple border-top to match background */
+}
+
+footer p {
+    margin: 0;
+    padding: 5px 0;
+}
